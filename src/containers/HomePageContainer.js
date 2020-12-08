@@ -6,12 +6,8 @@ import Logo from "../components/Logo";
 const HomePageContainer = () => {
   return (
     <div className="HomePage">
-      <div>
         <Logo />
-      </div>
-      <div>
         <Image />
-      </div>
     </div>
   );
 };
