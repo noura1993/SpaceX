@@ -1,0 +1,15 @@
+.filter-wrapper select{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10em;
+  padding: 0.9em;
+  color: #ffffff;
+  background-image: url(../assets/icon/select@3x.png);
+  background-repeat: no-repeat;
+  background-size: 1em;
+  cursor: pointer;
+  background-position-x: 90%;
+  background-position-y: 50%;
+  outline: none;
+}
