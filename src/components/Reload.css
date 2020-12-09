@@ -1,12 +1,11 @@
 .reload {
     margin-top: 1em;
-    margin-right: -0.8em;
     float: right;
 }
 
 .reload-btn {
     color: #FFFFFF;
-    width: 10em;
+    width: 9em;
     padding: 0.9em;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -20,6 +19,7 @@
 
 .reload-img{
     margin-left: 0.6em;
+    padding-left: 0.3em;
     margin-bottom: -0.15em;
     width: 0.8em;
 }

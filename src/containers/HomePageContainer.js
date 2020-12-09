@@ -3,16 +3,22 @@ import "./HomePageContainer.css";
 import Image from "../components/Image";
 import Logo from "../components/Logo";
 import LaunchesContainer from "./LaunchesContainer";
+import Reload from "../components/Reload";
 
 const HomePageContainer = () => {
   return (
     <div className="HomePage">
-      <div className="left-contatiner">
+      <div className="header">
         <Logo />
-        <Image />
+        <Reload />
       </div>
-      <div className='right-container'>
-        <LaunchesContainer />
+      <div className="content-wrapper">
+        <div className="side-img">
+          <Image />
+        </div>
+        <div className="content">
+          <LaunchesContainer />
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,14 @@
-.HomePage {
-    display: flex;
+.header {
+    display: inline-block;
+    width: 100%;
 }
 
-.right-container{
+.content-wrapper {
+    display: inline-flex;
+    width: 100%;
+}
+
+.content{
     width: 100%;
     min-width: 20vw;
     margin-left: 5em;

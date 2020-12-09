@@ -1,16 +1,16 @@
 import React from "react";
-import Reload from "../components/Reload";
+import Launch from "../components/Launch";
 import DataSelectionsContainer from "./DataSelectionsContainer";
 import "./LaunchesContainer.css";
 
 const LaunchesContainer = () => {
   return (
     <div className="launches-wrapper">
-      <div className="top-btn">
-        <Reload />
-      </div>
-      <div className="bottom-btns">
+      <div className="controllers-btns">
         <DataSelectionsContainer />
+      </div>
+      <div className="launches">
+        <Launch />
       </div>
     </div>
   );

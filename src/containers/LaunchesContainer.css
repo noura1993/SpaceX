@@ -1,0 +1,15 @@
+.launches-wrapper {
+    width: 90%;
+    min-width: 40em;
+    position: relative;
+}
+
+.controllers-btns {
+    margin-bottom: 0.5em;
+    text-align: right;
+}
+
+.launches {
+    background-color: teal;
+    
+}
