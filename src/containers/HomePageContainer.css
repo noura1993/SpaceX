@@ -1,0 +1,9 @@
+.HomePage {
+    display: flex;
+}
+
+.right-container{
+    width: 100%;
+    min-width: 20vw;
+    margin-left: 5em;
+}
