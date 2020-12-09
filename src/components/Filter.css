@@ -1,3 +1,7 @@
+.filter-wrapper {
+    display: inline-block;
+}
+
 .filter-wrapper select{
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -12,4 +16,8 @@
   background-position-x: 90%;
   background-position-y: 50%;
   outline: none;
+}
+
+.filter-wrapper select:hover {
+    background-color: rgb(52, 150, 216);
 }

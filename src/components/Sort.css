@@ -1,0 +1,22 @@
+.sort-wrapper {
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+.sort {
+    color: #ffffff;
+    width: 10em;
+    padding: 0.9em;
+    cursor: pointer;
+    outline: none;
+}
+
+.sort:hover {
+    background-color: rgb(52, 150, 216);
+}
+
+.sort-img {
+    width: 1em;
+    margin-left: 0.4em;
+    margin-bottom: -0.4em;
+}
