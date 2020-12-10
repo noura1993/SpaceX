@@ -7,7 +7,7 @@ import Reload from "../components/Reload";
 
 const HomePageContainer = () => {
   return (
-    <div className="HomePage">
+    <div className="home-page">
       <div className="header">
         <Logo />
         <Reload />

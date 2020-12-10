@@ -1,5 +1,5 @@
 .launch {
-  margin: 1em;
+  margin: 0.5em;
   border-radius: 10px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
   border: 1px solid white;
@@ -8,18 +8,18 @@
 
 .flight-number {
   font-size: 40px;
-  /* margin-left: 1em; */
+  display: inline-block;
+  width: 50px;
 }
 
 .mission-name {
   font-size: 32px;
-  margin-left: 1em;
+  margin-left: 1.8em;
 }
 
 .date {
   font-size: 16px;
   text-align: right;
-
 }
 
 .rocket-name {
@@ -37,8 +37,5 @@
   margin-right: 1em;
   text-align: justify;
   flex: 1 1 auto;
-  padding: 15px;
+  padding: 12px;
 }
-
-
-

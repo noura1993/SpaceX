@@ -1,11 +1,12 @@
 .launches-wrapper {
-  width: 95%;
+  width: 92%;
   min-width: 40em;
   position: relative;
 }
 
 .controllers-btns {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
+  margin-right: 0.6em;
   text-align: right;
 }
 
