@@ -7,7 +7,7 @@
   -webkit-appearance: none;
   appearance: none;
   width: 10em;
-  padding: 0.7em;
+  padding-left: 1em;
   color: #ffffff;
   background-image: url(../assets/icon/select@3x.png);
   background-repeat: no-repeat;
@@ -16,6 +16,7 @@
   background-position-x: 85%;
   background-position-y: 50%;
   outline: none;
+  height: 2.5em;
 }
 
 .filter-wrapper select:hover {
