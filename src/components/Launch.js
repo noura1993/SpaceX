@@ -6,6 +6,8 @@ const Launch = ({ launch }) => {
     <div className="launch">
       <div className="left-side">
         <span className="flight-number">#{launch.flightNumber}</span>
+      </div>
+      <div className="middle">
         <span className="mission-name">{launch.missionName}</span>
       </div>
       <div className="right-side">

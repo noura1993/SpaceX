@@ -15,6 +15,7 @@
 .mission-name {
   font-size: 32px;
   margin-left: 1.8em;
+  display: inline-block;
 }
 
 .date {
@@ -30,7 +31,15 @@
 .left-side {
   margin-top: 0.5em;
   margin-left: 2em;
-  flex: 1 1 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.middle {
+  justify-content: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block; 
 }
 
 .right-side {
@@ -38,4 +47,5 @@
   text-align: justify;
   flex: 1 1 auto;
   padding: 12px;
+  width: 20%;
 }
