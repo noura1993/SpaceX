@@ -12,9 +12,11 @@ const LaunchesContainer = () => {
       .then((res) => res.json())
       .then((jsonResponse) => {
         if (jsonResponse.length > 0) {
+          let id = 0;
           const newLaunches = jsonResponse.map( launch => {
           let date = dateFormat(new Date(launch.launch_date_utc), "dS mmm yyyy");
             return {
+              id: id++,
               flightNumber: launch.flight_number,
               missionName: launch.mission_name,
               date: date,
@@ -29,7 +31,7 @@ const LaunchesContainer = () => {
 
   useEffect(() => {
     getLaunches();
-  });
+  }, []);
 
   return (
     <div className="launches-wrapper">
@@ -38,7 +40,7 @@ const LaunchesContainer = () => {
       </div>
       <div className="launches">
         {launches.map((launch) => {
-          return <Launch key={launch.flightNumber} launch={launch} />;
+          return <Launch key={launch.id} launch={launch} />;
         })}
       </div>
     </div>
