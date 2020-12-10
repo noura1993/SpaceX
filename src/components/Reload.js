@@ -7,7 +7,7 @@ const Reload = () => {
         <div className='reload'>
             <button className='reload-btn'>
                 Reload Data
-                <img className='reload-img' src={Refresh} />
+                <img className='reload-img' src={Refresh} alt='reload icon' />
             </button>
         </div>
     );

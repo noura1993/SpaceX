@@ -9,7 +9,7 @@ const Sort = () => {
     <div className="sort-wrapper">
       <button className='sort'>
           Sort {sortText}
-          <img className='sort-img' src={SortIcon} />
+          <img className='sort-img' src={SortIcon} alt='sort icon' />
       </button>
     </div>
   );

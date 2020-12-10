@@ -72,3 +72,25 @@ $font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
   font-weight: bold;
   border: 1px solid $primary-blue;
 }
+
+.launch {
+  font-family: $font-family;
+  font-weight: 500;
+  color: $font-color;
+}
+
+.flight-number {
+  font-weight: 500;
+}
+
+.mission-name {
+  font-weight: 500;
+}
+
+.date {
+  font-weight: 400;
+}
+
+.rocket-name {
+  font-weight: bold;
+}
