@@ -1,11 +1,22 @@
 .launches-wrapper {
-    width: 90%;
-    min-width: 40em;
-    position: relative;
+  width: 95%;
+  min-width: 40em;
+  position: relative;
 }
 
 .controllers-btns {
-    margin-bottom: 0.5em;
-    text-align: right;
+  margin-bottom: 0.5em;
+  text-align: right;
 }
 
+.launches {
+  overflow-y: scroll;
+  height: 720px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.launches::-webkit-scrollbar {
+    display: none;
+  }
+  

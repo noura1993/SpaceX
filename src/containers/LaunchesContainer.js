@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import Launch from "../components/Launch";
 import DataSelectionsContainer from "./DataSelectionsContainer";
 import "./LaunchesContainer.css";
+import dateFormat from 'dateformat';
 
 const LaunchesContainer = () => {
   const [launches, setLaunches] = useState([]);
@@ -11,7 +12,16 @@ const LaunchesContainer = () => {
       .then((res) => res.json())
       .then((jsonResponse) => {
         if (jsonResponse.length > 0) {
-          setLaunches(jsonResponse);
+          const newLaunches = jsonResponse.map( launch => {
+          let date = dateFormat(new Date(launch.launch_date_utc), "dS mmm yyyy");
+            return {
+              flightNumber: launch.flight_number,
+              missionName: launch.mission_name,
+              date: date,
+              rocketName: launch.rocket.rocket_name
+            };
+          });
+          setLaunches(newLaunches);
         }
       })
       .catch((error) => console.error(error));
@@ -28,7 +38,7 @@ const LaunchesContainer = () => {
       </div>
       <div className="launches">
         {launches.map((launch) => {
-          return <Launch key={launch.id} launch={launch} />;
+          return <Launch key={launch.flightNumber} launch={launch} />;
         })}
       </div>
     </div>

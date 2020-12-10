@@ -1,5 +1,5 @@
 .launch {
-  margin-bottom: 1em;
+  margin: 1em;
   border-radius: 10px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
   border: 1px solid white;
@@ -7,12 +7,13 @@
 
 .flight-number {
   font-size: 40px;
-  margin-left: 1em;
+  /* margin-left: 1em; */
 }
 
 .mission-name {
   font-size: 32px;
   margin-left: 1em;
+  text-align: center;
 }
 
 .date {
@@ -25,8 +26,9 @@
 }
 
 .left-side {
+  /* display: flex; */
   margin-top: 0.5em;
-  display: inline-block;
+  margin-left: 2em;
 }
 
 .right-side {
