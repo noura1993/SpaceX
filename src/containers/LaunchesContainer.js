@@ -3,15 +3,23 @@ import Launch from "../components/Launch";
 import DataSelectionsContainer from "./DataSelectionsContainer";
 import "./LaunchesContainer.css";
 
-const LaunchesContainer = ({launches, years}) => {
-
+const LaunchesContainer = ({
+  rawLaunches,
+  years,
+  displayedLaunches,
+  setDisplayedLaunches
+}) => {
   return (
     <div className="launches-wrapper">
       <div className="controllers-btns">
-        <DataSelectionsContainer years={years} />
+        <DataSelectionsContainer
+          years={years}
+          rawLaunches={rawLaunches}
+          setDisplayedLaunches={setDisplayedLaunches}
+        />
       </div>
       <div className="launches">
-        {launches.map((launch) => {
+        {displayedLaunches.map((launch) => {
           return <Launch key={launch.id} launch={launch} />;
         })}
       </div>

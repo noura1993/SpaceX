@@ -7,7 +7,8 @@ import Reload from "../components/Reload";
 import dateFormat from "dateformat";
 
 const HomePageContainer = () => {
-  const [launches, setLaunches] = useState([]);
+  const [rawLaunches, setRawLaunches] = useState([]);
+  const [displayedLaunches, setDisplayedLaunches] = useState([]);
   const [years, setYears] = useState([]);
 
   function getLaunches() {
@@ -32,10 +33,12 @@ const HomePageContainer = () => {
               missionName: launch.mission_name,
               date: date,
               rocketName: launch.rocket.rocket_name,
+              launchYear: launch.launch_year
             };
           });
           setYears(filterYears);
-          setLaunches(newLaunches);
+          setRawLaunches(newLaunches);
+          setDisplayedLaunches(newLaunches);
         }
       })
       .catch((error) => console.error(error));
@@ -56,7 +59,7 @@ const HomePageContainer = () => {
           <Image />
         </div>
         <div className="content">
-          <LaunchesContainer years={years} launches={launches} />
+          <LaunchesContainer years={years} rawLaunches={rawLaunches} displayedLaunches={displayedLaunches} setDisplayedLaunches={setDisplayedLaunches} />
         </div>
       </div>
     </div>

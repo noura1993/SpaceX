@@ -1,11 +1,15 @@
 import React from "react";
 import "./Filter.css";
 
-const Filter = ({years}) => {
+const Filter = ({years, filterByYear}) => {
+
+  function onChange(value) {
+    filterByYear(value);
+  }
 
   return (
     <div className="filter-wrapper">
-      <select name="years" id="years">
+      <select name="years" id="years" onChange={(e) => onChange(e.target.value)}>
         <option defaultValue>Filter By Year</option>
         {years.map( year => {
           return <option value={year}>{year}</option>
