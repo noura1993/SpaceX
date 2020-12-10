@@ -8,7 +8,6 @@
 .flight-number {
   font-size: 40px;
   margin-left: 1em;
-  
 }
 
 .mission-name {
@@ -22,14 +21,17 @@
 
 .rocket-name {
   font-size: 24px;
+  text-align: right;
 }
 
 .left-side {
   margin-top: 0.5em;
+  display: inline-block;
 }
 
 .right-side {
-  text-align: right;
+  float: right;
+  margin-right: 1em;
 }
 
 

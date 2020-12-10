@@ -9,8 +9,8 @@ const Launch = ({ launch }) => {
         <span className="mission-name">{launch.mission_name}</span>
       </div>
       <div className="right-side">
-        <span className="date">{launch.launch_date_utc}</span>
-        <span className="rocket-name">{launch.rocket.rocket_name}</span>
+        <div className="date">{launch.launch_date_utc}</div>
+        <div className="rocket-name">{launch.rocket.rocket_name}</div>
       </div>
     </div>
   );
