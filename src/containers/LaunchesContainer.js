@@ -1,37 +1,9 @@
-import React, { useEffect, useState} from "react";
+import React from "react";
 import Launch from "../components/Launch";
 import DataSelectionsContainer from "./DataSelectionsContainer";
 import "./LaunchesContainer.css";
-import dateFormat from 'dateformat';
 
-const LaunchesContainer = () => {
-  const [launches, setLaunches] = useState([]);
-
-  function getLaunches() {
-    fetch("https://api.spacexdata.com/v3/launches")
-      .then((res) => res.json())
-      .then((jsonResponse) => {
-        if (jsonResponse.length > 0) {
-          let id = 0;
-          const newLaunches = jsonResponse.map( launch => {
-          let date = dateFormat(new Date(launch.launch_date_utc), "dS mmm yyyy");
-            return {
-              id: id++,
-              flightNumber: launch.flight_number,
-              missionName: launch.mission_name,
-              date: date,
-              rocketName: launch.rocket.rocket_name
-            };
-          });
-          setLaunches(newLaunches);
-        }
-      })
-      .catch((error) => console.error(error));
-  }
-
-  useEffect(() => {
-    getLaunches();
-  }, []);
+const LaunchesContainer = ({launches}) => {
 
   return (
     <div className="launches-wrapper">
