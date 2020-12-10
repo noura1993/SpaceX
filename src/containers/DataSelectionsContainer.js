@@ -3,10 +3,10 @@ import Filter from '../components/Filter';
 import Sort from '../components/Sort';
 import './DataSelectionsContainer.css';
 
-const DataSelectionsContainer = () => {
+const DataSelectionsContainer = ({years}) => {
     return (
         <div className='selections-wrapper'>
-            <Filter />
+            <Filter years={years} />
             <Sort />
         </div>
     );

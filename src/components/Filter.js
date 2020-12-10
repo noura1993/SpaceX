@@ -1,14 +1,15 @@
 import React from "react";
 import "./Filter.css";
 
-const Filter = () => {
+const Filter = ({years}) => {
 
   return (
     <div className="filter-wrapper">
       <select name="years" id="years">
         <option defaultValue>Filter By Year</option>
-        <option value="2000">2000</option>
-        <option value="2020">2020</option>
+        {years.map( year => {
+          return <option value={year}>{year}</option>
+        })}
       </select>
     </div>
   );

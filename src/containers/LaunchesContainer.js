@@ -3,12 +3,12 @@ import Launch from "../components/Launch";
 import DataSelectionsContainer from "./DataSelectionsContainer";
 import "./LaunchesContainer.css";
 
-const LaunchesContainer = ({launches}) => {
+const LaunchesContainer = ({launches, years}) => {
 
   return (
     <div className="launches-wrapper">
       <div className="controllers-btns">
-        <DataSelectionsContainer />
+        <DataSelectionsContainer years={years} />
       </div>
       <div className="launches">
         {launches.map((launch) => {
