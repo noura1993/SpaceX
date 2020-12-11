@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Filter from "../components/Filter";
 import Sort from "../components/Sort";
 import "./DataSelectionsContainer.css";
+import PropTypes from 'prop-types';
 
 const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches, displayedLaunches, sortText, setSortText}) => {
 
@@ -32,5 +33,13 @@ const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches, disp
     </div>
   );
 };
+
+DataSelectionsContainer.propTypes = {
+  years: PropTypes.array,
+  rawLaunches: PropTypes.array,
+  displayedLaunches: PropTypes.array,
+  sortText: PropTypes.string
+};
+
 
 export default DataSelectionsContainer;

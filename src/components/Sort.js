@@ -1,6 +1,7 @@
 import React from "react";
 import "./Sort.css";
 import SortIcon from "../assets/icon/sort@3x.png";
+import PropTypes from 'prop-types';
 
 const Sort = ({ sortText, sortLaunches }) => {
 
@@ -16,6 +17,11 @@ const Sort = ({ sortText, sortLaunches }) => {
       </button>
     </div>
   );
+};
+
+
+Sort.propTypes = {
+  sortText: PropTypes.string
 };
 
 export default Sort;

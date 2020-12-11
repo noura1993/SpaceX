@@ -1,5 +1,6 @@
 import React from "react";
 import "./Filter.css";
+import PropTypes from 'prop-types';
 
 const Filter = ({years, filterByYear}) => {
 
@@ -18,6 +19,10 @@ const Filter = ({years, filterByYear}) => {
       </select>
     </div>
   );
+};
+
+Filter.propTypes = {
+  years: PropTypes.array
 };
 
 export default Filter;

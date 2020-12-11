@@ -1,5 +1,6 @@
 import React from "react";
 import "./Launch.css";
+import PropTypes from 'prop-types';
 
 const Launch = ({ launch }) => {
   return (
@@ -16,6 +17,10 @@ const Launch = ({ launch }) => {
       </div>
     </div>
   );
+};
+
+Launch.propTypes = {
+  launch: PropTypes.object
 };
 
 export default Launch;

@@ -2,6 +2,7 @@ import React from "react";
 import Launch from "../components/Launch";
 import DataSelectionsContainer from "./DataSelectionsContainer";
 import "./LaunchesContainer.css";
+import PropTypes from 'prop-types';
 
 const LaunchesContainer = ({
   rawLaunches,
@@ -30,6 +31,13 @@ const LaunchesContainer = ({
       </div>
     </div>
   );
+};
+
+LaunchesContainer.propTypes = {
+  years: PropTypes.array,
+  rawLaunches: PropTypes.array,
+  displayedLaunches: PropTypes.array,
+  sortText: PropTypes.string
 };
 
 export default LaunchesContainer;
