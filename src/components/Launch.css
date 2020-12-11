@@ -49,3 +49,21 @@
   padding: 12px;
   width: 20%;
 }
+
+@media screen and (max-width: 650px) {
+  .flight-number {
+    font-size: 30px;
+  }
+
+  .mission-name {
+    font-size: 25px;
+  }
+
+  .date {
+    font-size: 9px;
+  }
+
+  .rocket-name {
+    font-size: 17px;
+  }
+}
