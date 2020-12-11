@@ -3,9 +3,7 @@ import Filter from "../components/Filter";
 import Sort from "../components/Sort";
 import "./DataSelectionsContainer.css";
 
-const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches, displayedLaunches}) => {
-
-    const [sortText, setSortText] = useState('Descending');
+const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches, displayedLaunches, sortText, setSortText}) => {
 
   function filterByYear(value) {
     if (value === "Show all") {
@@ -21,7 +19,7 @@ const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches, disp
   function sortLaunches() {
     let sortedLaunches = [...displayedLaunches];
     sortedLaunches.sort((a, b) => {
-        return sortText === 'Ascending' ? Date.parse(b.utcDate) - Date.parse(a.utcDate) : Date.parse(a.utcDate) - Date.parse(b.utcDate);
+        return sortText === 'Descending' ? Date.parse(b.utcDate) - Date.parse(a.utcDate) : Date.parse(a.utcDate) - Date.parse(b.utcDate);
     });
     setSortText(sortText === 'Descending'? 'Ascending' : 'Descending');
     setDisplayedLaunches(sortedLaunches);

@@ -10,6 +10,7 @@ const HomePageContainer = () => {
   const [rawLaunches, setRawLaunches] = useState([]);
   const [displayedLaunches, setDisplayedLaunches] = useState([]);
   const [years, setYears] = useState([]);
+  const [sortText, setSortText] = useState("Descending");
 
   function getLaunches() {
     fetch("https://api.spacexdata.com/v3/launches")
@@ -34,7 +35,7 @@ const HomePageContainer = () => {
               date: date,
               utcDate: launch.launch_date_utc,
               rocketName: launch.rocket.rocket_name,
-              launchYear: launch.launch_year
+              launchYear: launch.launch_year,
             };
           });
           setYears(filterYears);
@@ -48,6 +49,7 @@ const HomePageContainer = () => {
   function reload() {
     getLaunches();
     document.getElementById("years").selectedIndex = 0;
+    setSortText('Descending');
   }
 
   useEffect(() => {
@@ -65,7 +67,14 @@ const HomePageContainer = () => {
           <Image />
         </div>
         <div className="content">
-          <LaunchesContainer years={years} rawLaunches={rawLaunches} displayedLaunches={displayedLaunches} setDisplayedLaunches={setDisplayedLaunches} />
+          <LaunchesContainer
+            years={years}
+            rawLaunches={rawLaunches}
+            displayedLaunches={displayedLaunches}
+            setDisplayedLaunches={setDisplayedLaunches}
+            sortText={sortText}
+            setSortText={setSortText}
+          />
         </div>
       </div>
     </div>

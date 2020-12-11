@@ -7,7 +7,9 @@ const LaunchesContainer = ({
   rawLaunches,
   years,
   displayedLaunches,
-  setDisplayedLaunches
+  setDisplayedLaunches,
+  sortText,
+  setSortText,
 }) => {
   return (
     <div className="launches-wrapper">
@@ -17,6 +19,8 @@ const LaunchesContainer = ({
           rawLaunches={rawLaunches}
           setDisplayedLaunches={setDisplayedLaunches}
           displayedLaunches={displayedLaunches}
+          sortText={sortText}
+          setSortText={setSortText}
         />
       </div>
       <div className="launches">
