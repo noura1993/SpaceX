@@ -44,6 +44,11 @@ const HomePageContainer = () => {
       .catch((error) => console.error(error));
   }
 
+  function reload() {
+    getLaunches();
+    document.getElementById("years").selectedIndex = 0;
+  }
+
   useEffect(() => {
     getLaunches();
   }, []);
@@ -52,7 +57,7 @@ const HomePageContainer = () => {
     <div className="home-page">
       <div className="header">
         <Logo />
-        <Reload reload={getLaunches} />
+        <Reload reload={reload} />
       </div>
       <div className="content-wrapper">
         <div className="side-img">
