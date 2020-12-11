@@ -9,10 +9,14 @@ const DataSelectionsContainer = ({
   setDisplayedLaunches,
 }) => {
   function filterByYear(value) {
-    const filteredLaunches = rawLaunches.filter((launch) => {
-      return launch.launchYear === value;
-    });
-    setDisplayedLaunches(filteredLaunches);
+    if (value === "Show all") {
+      setDisplayedLaunches(rawLaunches);
+    } else {
+      const filteredLaunches = rawLaunches.filter((launch) => {
+        return launch.launchYear === value;
+      });
+      setDisplayedLaunches(filteredLaunches);
+    }
   }
 
   return (

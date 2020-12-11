@@ -11,6 +11,7 @@ const Filter = ({years, filterByYear}) => {
     <div className="filter-wrapper">
       <select name="years" id="years" onChange={(e) => onChange(e.target.value)}>
         <option defaultValue>Filter By Year</option>
+        <option value='Show all'>Show all</option>
         {years.map( year => {
           return <option value={year}>{year}</option>
         })}
