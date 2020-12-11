@@ -1,15 +1,18 @@
-import React, {useState} from "react";
+import React from "react";
 import "./Sort.css";
-import SortIcon from '../assets/icon/sort@3x.png';
+import SortIcon from "../assets/icon/sort@3x.png";
 
-const Sort = () => {
-    const [sortText, setSortText] = useState('Descending');
+const Sort = ({ sortText, sortLaunches }) => {
+
+  function sort() {
+    sortLaunches()
+  }
 
   return (
     <div className="sort-wrapper">
-      <button className='sort'>
-          Sort {sortText}
-          <img className='sort-img' src={SortIcon} alt='sort icon' />
+      <button className="sort" onClick={sort}>
+        Sort {sortText}
+        <img className="sort-img" src={SortIcon} alt="sort icon" />
       </button>
     </div>
   );
