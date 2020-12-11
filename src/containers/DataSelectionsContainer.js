@@ -3,7 +3,7 @@ import Filter from "../components/Filter";
 import Sort from "../components/Sort";
 import "./DataSelectionsContainer.css";
 
-const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches,}) => {
+const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches, displayedLaunches}) => {
 
     const [sortText, setSortText] = useState('Descending');
 
@@ -19,7 +19,12 @@ const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches,}) =>
   }
 
   function sortLaunches() {
+    let sortedLaunches = [...displayedLaunches];
+    sortedLaunches.sort((a, b) => {
+        return sortText === 'Ascending' ? Date.parse(b.utcDate) - Date.parse(a.utcDate) : Date.parse(a.utcDate) - Date.parse(b.utcDate);
+    });
     setSortText(sortText === 'Descending'? 'Ascending' : 'Descending');
+    setDisplayedLaunches(sortedLaunches);
   }
 
   return (

@@ -16,6 +16,7 @@ const LaunchesContainer = ({
           years={years}
           rawLaunches={rawLaunches}
           setDisplayedLaunches={setDisplayedLaunches}
+          displayedLaunches={displayedLaunches}
         />
       </div>
       <div className="launches">

@@ -32,6 +32,7 @@ const HomePageContainer = () => {
               flightNumber: launch.flight_number,
               missionName: launch.mission_name,
               date: date,
+              utcDate: launch.launch_date_utc,
               rocketName: launch.rocket.rocket_name,
               launchYear: launch.launch_year
             };
