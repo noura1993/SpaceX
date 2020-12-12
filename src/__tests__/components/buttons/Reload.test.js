@@ -13,12 +13,9 @@ test("reload has a button with img", () => {
 });
 
 test("reload has onClick", () => {
-  let counter = 0;
-  const testFunction = () => {
-      counter++;
-  }
-  const { container } = render(<Reload reload={testFunction}/>);
-  const button = container.querySelector("button");
-  Simulate.click(button);
-  expect(counter).toEqual(1);
-});
+    const testFunction = jest.fn();
+    const { container } = render(<Reload reload={testFunction}/>);
+    const button = container.querySelector("button");
+    Simulate.click(button);
+    expect(testFunction).toBeCalledTimes(1);
+  });
