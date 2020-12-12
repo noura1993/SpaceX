@@ -5,7 +5,7 @@ import './Spin.css'
 const Spin = () => {
     return (
     <div className="spin">
-        <img src={loadingImg}></img>
+        <img src={loadingImg} alt='loading'></img>
     </div>
     );
 }
