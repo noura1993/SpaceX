@@ -49,6 +49,7 @@ const HomePageContainer = () => {
   function reload() {
     getLaunches();
     document.getElementById("years").selectedIndex = 0;
+    document.getElementById("launches").scrollTop = 0;
     setSortText('Descending');
   }
 
