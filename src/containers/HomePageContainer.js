@@ -5,14 +5,17 @@ import Logo from "../components/Logo";
 import LaunchesContainer from "./LaunchesContainer";
 import Reload from "../components/Reload";
 import dateFormat from "dateformat";
+import { Spin } from "antd";
 
 const HomePageContainer = () => {
   const [rawLaunches, setRawLaunches] = useState([]);
   const [displayedLaunches, setDisplayedLaunches] = useState([]);
   const [years, setYears] = useState([]);
   const [sortText, setSortText] = useState("Descending");
+  const [loading, setLoading] = useState(false);
 
   function getLaunches() {
+    setLoading(true);
     fetch("https://api.spacexdata.com/v3/launches")
       .then((res) => res.json())
       .then((jsonResponse) => {
@@ -41,6 +44,7 @@ const HomePageContainer = () => {
           setYears(filterYears);
           setRawLaunches(newLaunches);
           setDisplayedLaunches(newLaunches);
+          setLoading(false);
         }
       })
       .catch((error) => console.error(error));
@@ -50,7 +54,7 @@ const HomePageContainer = () => {
     getLaunches();
     document.getElementById("years").selectedIndex = 0;
     document.getElementById("launches").scrollTop = 0;
-    setSortText('Descending');
+    setSortText("Descending");
   }
 
   useEffect(() => {
@@ -68,14 +72,16 @@ const HomePageContainer = () => {
           <Image />
         </div>
         <div className="content">
-          <LaunchesContainer
-            years={years}
-            rawLaunches={rawLaunches}
-            displayedLaunches={displayedLaunches}
-            setDisplayedLaunches={setDisplayedLaunches}
-            sortText={sortText}
-            setSortText={setSortText}
-          />
+          <Spin spinning={loading}>
+            <LaunchesContainer
+              years={years}
+              rawLaunches={rawLaunches}
+              displayedLaunches={displayedLaunches}
+              setDisplayedLaunches={setDisplayedLaunches}
+              sortText={sortText}
+              setSortText={setSortText}
+            />
+          </Spin>
         </div>
       </div>
     </div>
