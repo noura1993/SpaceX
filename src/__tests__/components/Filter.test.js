@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Filter from "../../../components/Filter";
+import Filter from "../../components/Filter";
 import { Simulate } from 'react-dom/test-utils';
 
 test("filter options", () => {

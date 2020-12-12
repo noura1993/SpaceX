@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Spin from "../../../components/Spin";
+import Spin from "../../components/Spin";
 
 test("img with alt", () => {
   const { container } = render(<Spin />);

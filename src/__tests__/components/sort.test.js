@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Sort from "../../../components/Sort";
+import Sort from "../../components/Sort";
 import { Simulate } from "react-dom/test-utils";
 
 test("sort launches", () => {

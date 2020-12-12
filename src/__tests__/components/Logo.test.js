@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Logo from "../../../components/Logo";
+import Logo from "../../components/Logo";
 
 test("logo has img & title", () => {
   const { container } = render(<Logo />);

@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Reload from "../../../components/Reload";
+import Reload from "../../components/Reload";
 import { Simulate } from 'react-dom/test-utils';
 
 test("reload has a button with img", () => {

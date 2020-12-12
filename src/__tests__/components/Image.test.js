@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Image from "../../../components/Image";
+import Image from "../../components/Image";
 
 test("img with alt", () => {
   const { container } = render(<Image />);
