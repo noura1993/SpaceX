@@ -5,7 +5,6 @@ import Logo from "../components/Logo";
 import LaunchesContainer from "./LaunchesContainer";
 import Reload from "../components/Reload";
 import dateFormat from "dateformat";
-import { Spin } from "antd";
 
 const HomePageContainer = () => {
   const [rawLaunches, setRawLaunches] = useState([]);
@@ -72,16 +71,15 @@ const HomePageContainer = () => {
           <Image />
         </div>
         <div className="content">
-          <Spin spinning={loading}>
-            <LaunchesContainer
-              years={years}
-              rawLaunches={rawLaunches}
-              displayedLaunches={displayedLaunches}
-              setDisplayedLaunches={setDisplayedLaunches}
-              sortText={sortText}
-              setSortText={setSortText}
-            />
-          </Spin>
+          <LaunchesContainer
+            years={years}
+            rawLaunches={rawLaunches}
+            displayedLaunches={displayedLaunches}
+            setDisplayedLaunches={setDisplayedLaunches}
+            sortText={sortText}
+            setSortText={setSortText}
+            loading={loading}
+          />
         </div>
       </div>
     </div>
