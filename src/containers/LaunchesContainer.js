@@ -24,7 +24,7 @@ const LaunchesContainer = ({
           setSortText={setSortText}
         />
       </div>
-      <div className="launches">
+      <div className="launches" id='launches'>
         {displayedLaunches.map((launch) => {
           return <Launch key={launch.id} launch={launch} />;
         })}

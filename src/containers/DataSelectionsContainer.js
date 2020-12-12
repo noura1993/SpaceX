@@ -2,34 +2,50 @@ import React from "react";
 import Filter from "../components/Filter";
 import Sort from "../components/Sort";
 import "./DataSelectionsContainer.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const DataSelectionsContainer = ({rawLaunches, years, setDisplayedLaunches, displayedLaunches, sortText, setSortText}) => {
-
+const DataSelectionsContainer = ({
+  rawLaunches,
+  years,
+  setDisplayedLaunches,
+  displayedLaunches,
+  sortText,
+  setSortText,
+}) => {
   function filterByYear(value) {
+    let filteredLaunches = [];
     if (value === "Show all") {
-      setDisplayedLaunches(rawLaunches);
+      filteredLaunches = rawLaunches;
     } else {
-      const filteredLaunches = rawLaunches.filter((launch) => {
+      filteredLaunches = rawLaunches.filter((launch) => {
         return launch.launchYear === value;
       });
-      setDisplayedLaunches(filteredLaunches);
     }
+    const sortedLaunches = sortLaunches(filteredLaunches, sortText === "Descending");
+    setDisplayedLaunches(sortedLaunches);
   }
 
-  function sortLaunches() {
-    let sortedLaunches = [...displayedLaunches];
+  function sortLaunches(launches, sortAscending) {
+    let sortedLaunches = [...launches];
     sortedLaunches.sort((a, b) => {
-        return sortText === 'Descending' ? Date.parse(b.utcDate) - Date.parse(a.utcDate) : Date.parse(a.utcDate) - Date.parse(b.utcDate);
+      return sortAscending 
+        ? Date.parse(a.utcDate) - Date.parse(b.utcDate)
+        : Date.parse(b.utcDate) - Date.parse(a.utcDate);
     });
-    setSortText(sortText === 'Descending'? 'Ascending' : 'Descending');
+    return sortedLaunches;
+  }
+
+  function handleSortClick() {
+    const sortedLaunches = sortLaunches(displayedLaunches, sortText === "Ascending");
+
+    setSortText(sortText === "Descending" ? "Ascending" : "Descending");
     setDisplayedLaunches(sortedLaunches);
   }
 
   return (
     <div className="selections-wrapper">
       <Filter years={years} filterByYear={filterByYear} />
-      <Sort sortText={sortText} sortLaunches={sortLaunches} />
+      <Sort sortText={sortText} handleSortClick={handleSortClick} />
     </div>
   );
 };
@@ -38,8 +54,7 @@ DataSelectionsContainer.propTypes = {
   years: PropTypes.array,
   rawLaunches: PropTypes.array,
   displayedLaunches: PropTypes.array,
-  sortText: PropTypes.string
+  sortText: PropTypes.string,
 };
-
 
 export default DataSelectionsContainer;

@@ -3,10 +3,10 @@ import "./Sort.css";
 import SortIcon from "../assets/icon/sort@3x.png";
 import PropTypes from 'prop-types';
 
-const Sort = ({ sortText, sortLaunches }) => {
+const Sort = ({ sortText, handleSortClick }) => {
 
   function sort() {
-    sortLaunches()
+    handleSortClick()
   }
 
   return (
